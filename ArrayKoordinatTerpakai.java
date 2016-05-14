@@ -1,64 +1,68 @@
-package javaapplication5;
-public class ArrayKoordinatTerpakai{
-    private Koordinat[] unavailable;
-    private int i;
+public class ArrayKoordinatTerpakai implements Printable{
+    //Atribut
+    private static Koordinat[] unavailable;
+    private static int neff;
     
+    //Konstruktor
     public ArrayKoordinatTerpakai(){
-        i = 0;
+        unavailable = new Koordinat[1000];
+        neff = 0;
     }
     
-    public void tambahLahan(Koordinat lahan){
-        i++;
-        unavailable[i]=lahan;
-    }
-    
-    public void tambahBangunan(Bangunan b){
-       Koordinat temp = null;
-       int j;
-        
-       int bataskiri = b.getTitikPusat().getX()-(b.getPanjang()/2);
-       int bataskanan = b.getTitikPusat().getX()+(b.getPanjang()/2);
-       int batasatas = b.getTitikPusat().getY()+(b.getLebar()/2);
-       int batasbawah = b.getTitikPusat().getX()-(b.getPanjang()/2);
-       
-       for(j= bataskiri; j<=bataskanan; j++){
-           temp.setX(j);
-           temp.setY(batasbawah);
-           
-           tambahLahan(temp);
-       }
-       
-       for(j= bataskiri; j<=bataskanan; j++){
-           temp.setX(j);
-           temp.setY(batasatas);
-           
-           tambahLahan(temp);
-       }
-       
-       for(j= batasatas; j<=batasbawah; j++){
-           temp.setX(j);
-           temp.setY(bataskiri);
-           
-           tambahLahan(temp);
-       }
-       
-       for(j= batasatas; j<=batasbawah; j++){
-           temp.setX(j);
-           temp.setY(bataskanan);
-           
-           tambahLahan(temp);
-       }
-    }
-    
-    public void setKoordinat(Koordinat[] unavailable){
-        this.unavailable=unavailable;
-    }
-    
+    //Getter
     public Koordinat[] getUnavailable(){
         return unavailable;
     }
-    
     public Koordinat getUnavailable(int i){
         return unavailable[i];
+    }
+    
+    //Setter
+    public void setKoordinat(Koordinat[] unavailable){
+        this.unavailable = unavailable;
+    }
+    
+    //Method
+    public void tambahLahan(Koordinat lahan){
+        unavailable[neff] = lahan;
+        neff++;
+    }
+    public void tambahBangunan(Bangunan b){
+        Koordinat temp = new Koordinat(b.getTitikPusat());
+        Koordinat hasil = new Koordinat();
+        int i;
+        int bKiri = temp.getX()-(b.getPanjang()/2);
+        int bKanan = temp.getX()+(b.getPanjang()/2);
+        int bAtas = temp.getY()+(b.getLebar()/2);
+        int bBawah = temp.getX()-(b.getPanjang()/2);
+       
+        for(i= bKiri; i<=bKanan; i++){
+             hasil.setX(i);
+             hasil.setY(bBawah);
+
+             tambahLahan(hasil);
+             prtln(hasil.toString());
+        }
+        for(i= bKiri; i<=bKanan; i++){
+             hasil.setX(i);
+             hasil.setY(bAtas);
+
+             tambahLahan(hasil);
+             prtln(hasil.toString());
+        }
+        for(i= bAtas; i<=bBawah; i++){
+             hasil.setX(i);
+             hasil.setY(bKiri);
+
+             tambahLahan(hasil);
+             prtln(hasil.toString());
+        }
+        for(i= bAtas; i<=bBawah; i++){
+             hasil.setX(i);
+             hasil.setY(bKanan);
+
+             tambahLahan(hasil);
+             prtln(hasil.toString());
+        }
     }
 }
