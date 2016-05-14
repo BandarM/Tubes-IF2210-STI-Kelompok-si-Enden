@@ -2,13 +2,13 @@ public class ArrayKoordinatTerpakai implements Printable {
     //Atribut
     private static Koordinat[] unavailable;
     private static int neff;
-
+    
     //Konstruktor
     public ArrayKoordinatTerpakai() {
         unavailable = new Koordinat[1000];
         neff = 0;
     }
-
+    
     //Getter
     public Koordinat[] getUnavailable() {
         return unavailable;
@@ -37,38 +37,30 @@ public class ArrayKoordinatTerpakai implements Printable {
         Koordinat temp = new Koordinat(b.getTitikPusat());
         Koordinat hasil = new Koordinat();
         int i;
-        int bKiri = temp.getX()-(b.getPanjang()/2);
-        int bKanan = temp.getX()+(b.getPanjang()/2);
-        int bAtas = temp.getY()+(b.getLebar()/2);
-        int bBawah = temp.getX()-(b.getPanjang()/2);
+        int L = temp.getX();                    //Batas kiri bangunan
+        int R = temp.getX() + b.getPanjang()-1; //Batas kanan bangunan
+        int U = temp.getY();                    //Batas atas bangunan
+        int D = temp.getY() + b.getPanjang()-1; //Batas bawah bangunan
 
-        for(i= bKiri; i<=bKanan; i++){
+        for(i=L; i<=R; i++){
              hasil.setX(i);
-             hasil.setY(bBawah);
-
+             hasil.setY(U);
              tambahLahan(hasil);
-             prtln(hasil.toString());
         }
-        for(i= bKiri; i<=bKanan; i++){
+        for(i=L; i<=R; i++){
              hasil.setX(i);
-             hasil.setY(bAtas);
-
+             hasil.setY(D);
              tambahLahan(hasil);
-             prtln(hasil.toString());
         }
-        for(i= bAtas; i<=bBawah; i++){
+        for(i=U; i<=D; i++){
              hasil.setX(i);
-             hasil.setY(bKiri);
-
+             hasil.setY(L);
              tambahLahan(hasil);
-             prtln(hasil.toString());
         }
-        for(i= bAtas; i<=bBawah; i++){
+        for(i=U; i<=D; i++){
              hasil.setX(i);
-             hasil.setY(bKanan);
-
+             hasil.setY(R);
              tambahLahan(hasil);
-             prtln(hasil.toString());
         }
     }
 }
