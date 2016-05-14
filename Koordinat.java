@@ -44,15 +44,18 @@ public class Koordinat {
     }
 
     //Method
+    @Override
     public String toString() {
-            if(arah == Orientasi.ATAS) {
-                    return (x + ", " + y + " dan menghadap ke arah atas");
-            } else if(arah == Orientasi.KANAN) {
-                    return (x + ", " + y + " dan menghadap ke arah kanan");
-            } else if(arah == Orientasi.BAWAH) {
-                    return (x + ", " + y + " dan menghadap ke arah bawah");
-            } else {
-                    return (x + ", " + y + " dan menghadap ke arah kiri");
-            }
+        if(arah == Orientasi.ATAS) {
+                return (x + ", " + y + " dan menghadap ke arah atas");
+        } else if(arah == Orientasi.KANAN) {
+                return (x + ", " + y + " dan menghadap ke arah kanan");
+        } else if(arah == Orientasi.BAWAH) {
+                return (x + ", " + y + " dan menghadap ke arah bawah");
+        } else if(arah == Orientasi.KIRI) {
+                return (x + ", " + y + " dan menghadap ke arah kiri");
+        } else {
+            return (x + ", " + y);
+        }
     }
 }
