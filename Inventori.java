@@ -1,19 +1,32 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication5;
+
+/**
+ *
+ * @author feisal
+ */
 //Masih belum, dibuat cuma untuk membantu instansiasi inventori pemain
-public class Inventory<T>{
+public class Inventori implements Printable{
    
-   private T[] bag;
    private String nama;
    
-   public Inventory (String nama, T isi){
-      int i = 0;
-      
-      this.nama = nama;
-      if (nama="Item"){
-         while (i<=11){
-            T[i] bag = isi;
-         }
-      }else{
-         T[i] bag = isi;
-      }
+   public Inventori (String nama){
+        this.nama = nama;
+   }
+   
+   public void setNama(String nama){
+       this.nama=nama;
+   }
+   
+   public String getNama(){
+       return nama;
+   }
+   
+   public void cetakInventori(){
+       System.out.println("Yang ada di dalam Inventory " + nama);
    }
 }
