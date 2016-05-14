@@ -1,11 +1,13 @@
-public class Inventori implements Printable{
+package harvestvalley;
+
+public class Inventori implements Printable {
     //Atribut
     private static Tools[] alat;
     private static int neffAlat;
     int i;
    
     //Konstruktor
-    public Inventori()  {
+    public Inventori() {
         alat = new Tools[6];
         neffAlat = 0;
     }
@@ -34,7 +36,7 @@ public class Inventori implements Printable{
         alat[neffAlat] = t;
         neffAlat++;
     }
-    public void cetakInventori(){
+    public void cetakInventori() {
         prtln("Isi tas >> ");
         prtln("   <<Tools>>");
         for(i=0; i<neffAlat; i++) {
