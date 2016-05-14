@@ -1,27 +1,33 @@
-public class ArrayKoordinatTerpakai implements Printable{
+public class ArrayKoordinatTerpakai implements Printable {
     //Atribut
     private static Koordinat[] unavailable;
     private static int neff;
-    
+
     //Konstruktor
-    public ArrayKoordinatTerpakai(){
+    public ArrayKoordinatTerpakai() {
         unavailable = new Koordinat[1000];
         neff = 0;
     }
-    
+
     //Getter
-    public Koordinat[] getUnavailable(){
+    public Koordinat[] getUnavailable() {
         return unavailable;
     }
-    public Koordinat getUnavailable(int i){
+    public Koordinat getUnavailable(int i) {
         return unavailable[i];
     }
-    
+    public int getNeff() {
+        return neff;
+    }
+
     //Setter
-    public void setKoordinat(Koordinat[] unavailable){
+    public void setKoordinat(Koordinat[] unavailable) {
         this.unavailable = unavailable;
     }
-    
+    public void setNeff(int i) {
+        neff = i;
+    }
+
     //Method
     public void tambahLahan(Koordinat lahan){
         unavailable[neff] = lahan;
@@ -35,7 +41,7 @@ public class ArrayKoordinatTerpakai implements Printable{
         int bKanan = temp.getX()+(b.getPanjang()/2);
         int bAtas = temp.getY()+(b.getLebar()/2);
         int bBawah = temp.getX()-(b.getPanjang()/2);
-       
+
         for(i= bKiri; i<=bKanan; i++){
              hasil.setX(i);
              hasil.setY(bBawah);
