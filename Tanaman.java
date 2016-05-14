@@ -1,7 +1,7 @@
 public class Tanaman {
     //Atribut
     private String nama;
-    private String jenis;
+    private boolean panenberulang;
     private boolean status;
     private Koordinat posisi;
     private Fase fase;
@@ -14,9 +14,9 @@ public class Tanaman {
     private int umur;
     
     //Konstruktor
-    public Tanaman(String nama,String jenis, Koordinat posisi, int hB, int hJ, int fB, int fK, int fT, int fP){
+    public Tanaman(String nama,boolean panenberulang, Koordinat posisi, int hB, int hJ, int fB, int fK, int fT, int fP){
         this.nama = nama;
-        this.jenis = jenis;
+        this.panenberulang = panenberulang;
         posisi = new Koordinat (posisi);
         this.fase = Fase.BIBIT;
         status = false;
@@ -45,8 +45,8 @@ public class Tanaman {
     public String getNama (){
         return nama;
     }
-    public String getJenis(){
-        return jenis;
+    public String getPanenBerulang(){
+        return panenberulang;
     }
     public Fase getFase(){
         return fase;
