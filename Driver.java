@@ -5,7 +5,7 @@ public class Driver {
 		Scanner input = new Scanner(System.in);
 		int i;
 		
-		Pemain utama = new Pemain("Bona");
+		Pemain utama = new Pemain("Bandar");
 		
 		Waktu waktu = new Waktu();
 		Thread t = new Thread(waktu);
