@@ -14,7 +14,9 @@ public class Driver {
 		for(i=0; i<10; i++) {
 			utama.cetakPosisi();
 			utama.prtln("Waktu sekarang " + waktu.toString());
+			utama.prt("> ");
 			utama.moveChar(input.next().charAt(0), utama);
+			utama.prt("\n");
 		}
 	}
 }
