@@ -1,7 +1,7 @@
 public class Tanaman {
     //Atribut
     private String nama;
-    private boolean panenberulang;
+    private boolean panenUlang;
     private boolean status;
     private Koordinat posisi;
     private Fase fase;
@@ -14,9 +14,9 @@ public class Tanaman {
     private int umur;
     
     //Konstruktor
-    public Tanaman(String nama,boolean panenberulang, Koordinat posisi, int hB, int hJ, int fB, int fK, int fT, int fP){
+    public Tanaman(String nama,boolean b, Koordinat posisi, int hB, int hJ, int fB, int fK, int fT, int fP){
         this.nama = nama;
-        this.panenberulang = panenberulang;
+        this.panenUlang = b;
         posisi = new Koordinat (posisi);
         this.fase = Fase.BIBIT;
         status = false;
@@ -45,8 +45,8 @@ public class Tanaman {
     public String getNama (){
         return nama;
     }
-    public String getPanenBerulang(){
-        return panenberulang;
+    public boolean getPanenUlang(){
+        return panenUlang;
     }
     public Fase getFase(){
         return fase;
@@ -91,18 +91,18 @@ public class Tanaman {
                 fase=Fase.KECAMBAH;
                 umur = 0;
             }
-        }
-        if(fase == Fase.KECAMBAH){
+        } else if(fase == Fase.KECAMBAH){
             if(umur==fKecambah){
                 fase=Fase.TUMBUHAN;
                 umur =0 ;
             }
-        }
-        if(fase == Fase.TUMBUHAN){
+        } else if(fase == Fase.TUMBUHAN){
             if(umur==fTumbuhan){
                 fase=Fase.PANEN;
                 umur =0;
             }
+        } else {
+            tambahUmur();
         }
     }
     public void tambahUmur() {
