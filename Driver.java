@@ -1,31 +1,56 @@
 import java.util.Scanner;
 
-public class Driver {
-	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		int i;int neffTas = 0;
-		
-		Pemain utama = new Pemain("Bona");
-		
-		Waktu waktu = new Waktu();
-		Thread t = new Thread(waktu);
-		t.start();
-		
-		for(i=0; i<10; i++) {
-			utama.cetakPosisi();
-			utama.prtln("Waktu sekarang " + waktu.toString());
-			utama.moveChar(input.next().charAt(0), utama);
-                        
-	                Inventori[] tasTools = new Inventori[20];
-	                tasTools[0] = new Arit ("Arit");
-	                tasTools[1] = new Pacul ("Pacul");
-	                tasTools[2] = new Penyiram ("Penyiram Air");
-	                tasTools[3] = new Biji ("Biji", "Jagung");
-	                
-	                System.out.print("Isi dalam inventory :");
-	                for (Inventori bag: tasTools){
-	                    utama.prtln(bag.getNama());
-	                }
-                }
+public class Driver implements Printable {
+    //Atribut
+    private static Scanner input = new Scanner(System.in);
+    
+    //Konstruktor
+    
+    //Getter
+    
+    //Setter
+    
+    //Method
+    public void menu() {
+        prtln("1. New Game");
+        prtln("2. Load Game");
+        prtln("3. Exit Game");
+        prtln();
+        prt();
+    }
+    
+    public void newGame() {
+        prtln("Masukkan nama karakter Anda");
+        prt();
+        Pemain utama = new Pemain(input.next());
+	Waktu waktu = new Waktu();
+	Thread t = new Thread(waktu);
+	t.start();
+        
+        prt(utama);
+    }
+    
+    public void loadGame() {
+        
+    }
+    
+    public static void main(String[] args) {
+        Driver game = new Driver();
+        int i;
+        
+        do {
+            game.menu();
+            i = input.nextInt();
+            game.prtln();
+        } while (i<1 || i>3);
+        
+        switch(i) {
+            case 1  : game.newGame();
+                    break;
+            case 2  : game.loadGame();
+                    break;
+            case 3  : System.exit(0);
+                    break;
         }
+    }
 }
