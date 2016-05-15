@@ -8,7 +8,7 @@ public class Koordinat {
     public Koordinat() {
             x = 0;
             y = 0;
-            this.arah = Orientasi.BAWAH;
+            this.arah = null;
     }
     public Koordinat(int x, int y, Orientasi arah) {
             this.x = x;
