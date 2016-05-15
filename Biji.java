@@ -1,18 +1,24 @@
-public class Biji extends Tools{
+public class Biji extends Tools {
+	//Atribut
 	private int jumlah;
 	private String jenis;
 	
-	public Biji(String s, String jenis){
+	//Konstruktor
+	public Biji(String s, String jenis) {
 		super(s);
 		this.jenis = jenis;
 		this.jumlah = 5;
 	}
 	
-	public void pakai(){
-		jumlah--;
+	//Getter
+	public int getJumlah() {
+		return jumlah;
 	}
 	
-	public int getJumlah(){
-		return this.jumlah;
+	//Setter
+	
+	//Method
+	public void pakai() {
+		jumlah--;
 	}
 }
