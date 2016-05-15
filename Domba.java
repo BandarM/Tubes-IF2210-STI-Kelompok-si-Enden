@@ -18,10 +18,6 @@ public class Domba extends Hewan {
     public String getNama() {
         return nama;
     }
-    
-    //Setter
-    
-    //Method
     @Override
     public String getFase() {
         if (umur <= 3) {
@@ -51,5 +47,9 @@ public class Domba extends Hewan {
     @Override
     public int getHargaJual() {
         return hargajual = 100;
-    }    
+    }
+    
+    //Setter
+    
+    //Method
 }
