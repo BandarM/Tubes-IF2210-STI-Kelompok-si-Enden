@@ -1,6 +1,5 @@
-public class Arit extends Tools{
-	
-	public Arit(String s){
-		super(s);
-	}
+public class Arit extends Tools{	
+    public Arit(String s){
+        super(s);
+    }
 }
