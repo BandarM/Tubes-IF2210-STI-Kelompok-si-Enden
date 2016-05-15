@@ -30,7 +30,7 @@ public class ArrayKoordinatTerpakai implements Printable {
 
     //Method
     public void tambahLahan(Koordinat lahan){
-        unavailable[neff] = lahan;
+        unavailable[neff] = new Koordinat(lahan);
         neff++;
     }
     public void tambahBangunan(Bangunan b){
@@ -43,24 +43,24 @@ public class ArrayKoordinatTerpakai implements Printable {
         int D = temp.getY() + b.getPanjang()-1; //Batas bawah bangunan
 
         for(i=L; i<=R; i++){
-             hasil.setX(i);
-             hasil.setY(U);
-             tambahLahan(hasil);
+            hasil.setX(i);
+            hasil.setY(U);
+            tambahLahan(hasil);
         }
         for(i=L; i<=R; i++){
-             hasil.setX(i);
-             hasil.setY(D);
-             tambahLahan(hasil);
+            hasil.setX(i);
+            hasil.setY(D);
+            tambahLahan(hasil);
         }
         for(i=U; i<=D; i++){
-             hasil.setX(i);
-             hasil.setY(L);
-             tambahLahan(hasil);
+            hasil.setX(i);
+            hasil.setY(L);
+            tambahLahan(hasil);
         }
         for(i=U; i<=D; i++){
-             hasil.setX(i);
-             hasil.setY(R);
-             tambahLahan(hasil);
+            hasil.setX(i);
+            hasil.setY(R);
+            tambahLahan(hasil);
         }
     }
 }
