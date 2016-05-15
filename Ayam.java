@@ -1,9 +1,11 @@
 public class Ayam extends Hewan{
+    //Atribut
     private String nama;
     private String jenis;
     private boolean status;
     private Koordinat lokasi;
 
+    //Konstruktor
     public Ayam(String nama, boolean status, Koordinat lokasi, String jenis) {
         super(nama, status, lokasi, jenis);
         this.nama = nama;
@@ -12,11 +14,11 @@ public class Ayam extends Hewan{
         this.status = status;
     }
     
+    //Getter
     @Override
     public String getJenis() {
         return this.jenis = "Ayam";
     }
-    
     @Override
     public String getFase() {
         if (umur <= 4) {
@@ -30,7 +32,6 @@ public class Ayam extends Hewan{
         }
         return fase;
     }
-    
     @Override
     public int getHargaBeli() {
         if ("Kecil".equals(fase)) {
@@ -40,9 +41,12 @@ public class Ayam extends Hewan{
         }
         return hargabeli;
     }
-    
     @Override
     public int getHargaJual() {
         return hargajual = 70;
     }
+    
+    //Setter
+    
+    //Method
 }
