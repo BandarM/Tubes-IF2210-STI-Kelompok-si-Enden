@@ -86,6 +86,9 @@ public class Tanaman {
     public void setPanenUlang(boolean panenUlang){
         this.panenUlang = panenUlang;
     }
+    public void setUmur(int umur){
+        this.umur = umur;
+    }
     
     //Method
     public void ubahFase(){
