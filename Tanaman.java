@@ -83,6 +83,9 @@ public class Tanaman {
     public void setFPanen(){
         this.fase = Fase.PANEN;
     }
+    public void setPanenUlang(boolean panenUlang){
+        this.panenUlang = panenUlang;
+    }
     
     //Method
     public void ubahFase(){
