@@ -1,52 +1,5 @@
-public class Ayam extends Hewan{
-    //Atribut
-    private String nama;
-    private String jenis;
-    private boolean status;
-    private Koordinat lokasi;
-
-    //Konstruktor
-    public Ayam(String nama, boolean status, Koordinat lokasi, String jenis) {
-        super(nama, status, lokasi, jenis);
-        this.nama = nama;
-        this.jenis = jenis;
-        this.lokasi = lokasi;
-        this.status = status;
+public class Ayam extends Hewan {
+    public Ayam(String nama, String jenis, Koordinat lokasi){
+		super(nama,jenis,lokasi,20,70,1,3,2);
     }
-    
-    //Getter
-    @Override
-    public String getJenis() {
-        return this.jenis = "Ayam";
-    }
-    @Override
-    public String getFase() {
-        if (umur <= 4) {
-            fase = "Kecil";
-        }
-        else if (umur > 4) {
-            fase = "Besar";
-            if (umur % 2 == 0) {
-                fase = "Besar (Panen)";
-            }
-        }
-        return fase;
-    }
-    @Override
-    public int getHargaBeli() {
-        if ("Kecil".equals(fase)) {
-            hargabeli = 20;
-        } else {
-            hargabeli = 50;
-        }
-        return hargabeli;
-    }
-    @Override
-    public int getHargaJual() {
-        return hargajual = 70;
-    }
-    
-    //Setter
-    
-    //Method
 }
