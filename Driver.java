@@ -23,9 +23,9 @@ public class Driver implements Printable {
         prtln("Masukkan nama karakter Anda");
         prt();
         Pemain utama = new Pemain(input.next());
-	Waktu waktu = new Waktu();
-	Thread t = new Thread(waktu);
-	t.start();
+		Waktu waktu = new Waktu();
+		Thread t = new Thread(waktu);
+		t.start();
         
         prt(utama);
     }
