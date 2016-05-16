@@ -1,4 +1,4 @@
-public class Pemain implements Moveable, Printable{
+public class Pemain implements Moveable, Printable {
     //Atribut
     private static String nama;
     private static int gold;
